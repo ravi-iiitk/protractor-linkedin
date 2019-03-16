@@ -1,0 +1,42 @@
+{
+  "name": "weinvestassignment",
+  "version": "1.0.0",
+  "description": "Test Automation For Linkedin",
+  "main": "config.js",
+  "scripts": {
+    "test": "protractor config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+"
+  },
+  "keywords": [
+    "automation",
+    "javascript",
+    "protractor"
+  ],
+  "author": "Ravi Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ravi-iiitk/<new repo>/issues"
+  },
+  "homepage": "https://github.com/ravi-iiitk/<new-repo>#readme",
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "fs-extra": "latest",
+    "moment": "latest"
+  },
+  "devDependencies": {
+    "protractor": "latest",
+    "cucumber": "latest",
+    "cucumber-html-report": "^0.6.5",
+    "cucumber-html-reporter": "^4.0.5",
+    "protractor-cucumber-framework": "^6.1.1",
+    "protractor-multiple-cucumber-html-reporter-plugin": "^1.8.0",
+    "protractor-take-screenshots-on-demand": "^1.2.0",
+    "selenium-webdriver": "latest",
+    "selenium-standalone": "latest",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1"
+  }
+}
