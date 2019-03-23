@@ -63,17 +63,18 @@ function applyForJobEachPage(pageCounter) {
     currentPage.getText().then(function (currentPage) {
         console.log("Current Page is : Page No :-"+currentPage);
         console.log("Page Counter is :-"+pageCounter);
-        var nextPage = currentPage+1;
+        var nextPage = Number(currentPage)+1;
         console.log("Value of NextPage:"+nextPage);
         if(pageCounter!==1 && pageCounter!==9  )
         {
-            var xpath_page = "//button[@aria-label='Page "+nextPage+"']";
+            var xpath_page = "//button[@aria-label='Page "+pageCounter+"']";
             var this_page = element(by.xpath(xpath_page));
-            if(!this_page.isPresent())
+            if(this_page.isPresent())
             {
+                if(this_page.isDisplayed())
+                    commonlib.protractor_common.check_click(this_page,15);
 
             }
-            commonlib.protractor_common.check_click(this_page,15);
             browser.sleep(5000);
             var firstJob = element.all(by.xpath("//li[contains(@id,'ember')]//h3[contains(@id,'ember')]/a")).get(0);
             commonlib.protractor_common.check_click(firstJob,15);
@@ -98,10 +99,11 @@ function applyForJobEachPage(pageCounter) {
 
             }
         });
+        pageCounter = pageCounter+1;
+        if(pageCounter<=40)
+            applyForJobEachPage(pageCounter);
     });
-    pageCounter = pageCounter+1;
-    if(pageCounter<=40)
-        applyForJobEachPage(pageCounter);
+
 }
 
 
