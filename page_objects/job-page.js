@@ -9,6 +9,7 @@ var search_keyword= 'Automation testing';
 var loc_area = 'Worldwide';
 
 
+
 exports.jobpage={
 
     job_tab : element(by.xpath("//span[@class='nav-item__title'][contains(text(),'Jobs')]")),
@@ -60,47 +61,50 @@ function applyforJob() {
         var pageCounter = 1;
         while(pageCounter<=40)
         {
-            pageCounter = applyForJobEachPage(pageCounter);
+             pageCounter = applyForJobEachPage(pageCounter);
         }
 }
 
 
 function applyForJobEachPage(pageCounter) {
     var currentPage = element(by.xpath("//li[@class='artdeco-pagination__indicator artdeco-pagination__indicator--number active selected']/span"));
-    currentPage.getText().then(function (currentPage) {
-        console.log("Current Page is : Page No :-"+currentPage);
-        console.log("Page Counter is :-"+pageCounter);
-        if(pageCounter!==1 && pageCounter!==9  )
-        {
-            var xpath_page = "//button[@aria-label='Page "+pageCounter+"']";
-            var this_page = element(by.xpath(xpath_page));
-            commonlib.protractor_common.check_click(this_page,15);
-            browser.sleep(5000);
-            var firstJob = element.all(by.xpath("//li[contains(@id,'ember')]//h3[contains(@id,'ember')]/a")).get(0);
-            commonlib.protractor_common.check_click(firstJob,15);
-            browser.sleep(3000);
-        }
-        else if(pageCounter===9 )
-        {
-            var dotdot = element(by.xpath("//span[contains(text(),'…')]"));
-            commonlib.protractor_common.check_click(dotdot,15);
-            firstJob = element.all(by.xpath("//li[contains(@id,'ember')]//h3[contains(@id,'ember')]/a")).get(0);
-            commonlib.protractor_common.check_click(firstJob,15);
-            browser.sleep(5000);
-        }
-        scrollTillBottomLeft(1);
-        var all_job_heading = element.all(by.xpath("//li[contains(@id,'ember')]//h3[contains(@id,'ember')]/a"));
-        all_job_heading.count().then(function (no_jobs_list) {
-            console.log("Number of Jobs :"+no_jobs_list);
-            for(var job_counter=0;job_counter<no_jobs_list;job_counter++)
-            {
-                browser.sleep(1000);
-                checkJobIsThere(job_counter);
-            }
+    /*currentPage.getText().then(function (currentPage) {
         });
+    console.log("Current Page is : Page No :-"+currentPage);*/
+    console.log("Page Counter is :-"+pageCounter);
+    if(pageCounter!==1 && pageCounter!==9  )
+    {
+        var xpath_page = "//button[@aria-label='Page "+pageCounter+"']";
+        var this_page = element(by.xpath(xpath_page));
+        commonlib.protractor_common.check_click(this_page,15);
+        browser.sleep(5000);
+        var firstJob = element.all(by.xpath("//li[contains(@id,'ember')]//h3[contains(@id,'ember')]/a")).get(0);
+        commonlib.protractor_common.check_click(firstJob,15);
+        browser.sleep(3000);
+    }
+    else if(pageCounter===9 )
+    {
+        var dotdot = element(by.xpath("//span[contains(text(),'…')]"));
+        commonlib.protractor_common.check_click(dotdot,15);
+        firstJob = element.all(by.xpath("//li[contains(@id,'ember')]//h3[contains(@id,'ember')]/a")).get(0);
+        commonlib.protractor_common.check_click(firstJob,15);
+        browser.sleep(5000);
+    }
+    scrollTillBottomLeft(1);
+    var all_job_heading = element.all(by.xpath("//li[contains(@id,'ember')]//h3[contains(@id,'ember')]/a"));
+    all_job_heading.count().then(function (no_jobs_list) {
+        console.log("Number of Jobs :"+no_jobs_list);
+        for(var job_counter=0;job_counter<no_jobs_list;job_counter++)
+        {
+            browser.sleep(1000);
+            checkJobIsThere(job_counter);
+
+        }
     });
+
     pageCounter = pageCounter+1;
     return pageCounter;
+
 }
 
 

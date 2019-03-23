@@ -10,7 +10,7 @@ exports.config = {
     seleniumPort: 4444,
     seleniumArgs: ['-browserTimeout=60'],*/
     specs: [
-        'test_scenarios/feature_files/*.feature'
+        'test_scenarios/feature_files/customer-login.feature'
     ],
     directConnect: true,
     chromeDriver:'resources/chromedriver.exe',
@@ -41,7 +41,7 @@ exports.config = {
     cucumberOpts: {
         format: 'json:'+jsonReportFile,
         strict: true,
-        require: 'test_scenarios/step_definitions/*.js',
+        require: 'test_scenarios/step_definitions/customer-setp-def.js',
         tags: false,
         profile: false,
         'no-source': true,

@@ -1,0 +1,110 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Customer Login for XYZ Bank",
+    "line": 1,
+    "id": "customer-login-for-xyz-bank",
+    "tags": [],
+    "uri": "test_scenarios\\feature_files\\customer-login.feature",
+    "elements": [
+      {
+        "id": "customer-login-for-xyz-bank;verify-that-user-can-login-and-see-transations",
+        "keyword": "Scenario",
+        "line": 2,
+        "name": "Verify that user can login and see transations",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "I am on webpage",
+            "match": {
+              "location": "test_scenarios\\step_definitions\\customer-setp-def.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 43378000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "I click on customer",
+            "match": {
+              "location": "test_scenarios\\step_definitions\\customer-setp-def.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 34000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "I see the user name dropdown",
+            "match": {
+              "location": "test_scenarios\\step_definitions\\customer-setp-def.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 26000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "I select the user",
+            "match": {
+              "location": "test_scenarios\\step_definitions\\customer-setp-def.js:34"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "click on login",
+            "match": {
+              "location": "test_scenarios\\step_definitions\\customer-setp-def.js:41"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 21000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I must see the logged in user name displayed.",
+            "match": {
+              "location": "test_scenarios\\step_definitions\\customer-setp-def.js:48"
+            },
+            "result": {
+              "status": "pending"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules\\protractor-cucumber-framework\\lib\\resultsCapturer.js:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
