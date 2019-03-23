@@ -1,17 +1,17 @@
 [
   {
     "keyword": "Feature",
-    "name": "Customer Login for XYZ Bank",
+    "name": "Apply for JOBs in linkedin",
     "line": 1,
-    "id": "customer-login-for-xyz-bank",
+    "id": "apply-for-jobs-in-linkedin",
     "tags": [],
-    "uri": "test_scenarios\\feature_files\\customer-login.feature",
+    "uri": "test_scenarios\\feature_files\\job_apply.feature",
     "elements": [
       {
-        "id": "customer-login-for-xyz-bank;verify-that-user-can-login-and-see-transations",
+        "id": "apply-for-jobs-in-linkedin;apply-for-job-for-bengaluru",
         "keyword": "Scenario",
         "line": 2,
-        "name": "Verify that user can login and see transations",
+        "name": "Apply for job for Bengaluru",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -19,77 +19,79 @@
             "arguments": [],
             "keyword": "Given ",
             "line": 3,
-            "name": "I am on webpage",
+            "name": "I am on home page",
             "match": {
-              "location": "test_scenarios\\step_definitions\\customer-setp-def.js:11"
+              "location": "test_scenarios\\step_definitions\\job-apply-stepdefs.js:10"
             },
             "result": {
               "status": "passed",
-              "duration": 43378000000
+              "duration": 31683000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 4,
-            "name": "I click on customer",
+            "name": "I login",
             "match": {
-              "location": "test_scenarios\\step_definitions\\customer-setp-def.js:20"
+              "location": "test_scenarios\\step_definitions\\job-apply-stepdefs.js:18"
             },
             "result": {
               "status": "passed",
-              "duration": 34000000
+              "duration": 7208000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 5,
-            "name": "I see the user name dropdown",
+            "name": "I go to job search page",
             "match": {
-              "location": "test_scenarios\\step_definitions\\customer-setp-def.js:27"
+              "location": "test_scenarios\\step_definitions\\job-apply-stepdefs.js:26"
             },
             "result": {
               "status": "passed",
-              "duration": 26000000
+              "duration": 5000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 6,
-            "name": "I select the user",
+            "name": "I search job",
             "match": {
-              "location": "test_scenarios\\step_definitions\\customer-setp-def.js:34"
+              "location": "test_scenarios\\step_definitions\\job-apply-stepdefs.js:34"
             },
             "result": {
               "status": "passed",
-              "duration": 17000000
+              "duration": 15265000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 7,
-            "name": "click on login",
+            "name": "I filter the jobs",
             "match": {
-              "location": "test_scenarios\\step_definitions\\customer-setp-def.js:41"
+              "location": "test_scenarios\\step_definitions\\job-apply-stepdefs.js:42"
             },
             "result": {
               "status": "passed",
-              "duration": 21000000
+              "duration": 11788000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 8,
-            "name": "I must see the logged in user name displayed.",
+            "name": "I apply for all relevent jobs.",
             "match": {
-              "location": "test_scenarios\\step_definitions\\customer-setp-def.js:48"
+              "location": "test_scenarios\\step_definitions\\job-apply-stepdefs.js:50"
             },
             "result": {
-              "status": "pending"
+              "status": "failed",
+              "duration": 2881402000000,
+              "error_message": "TimeoutError: Wait timed out after 22ms\n    at C:\\LEARN\\AUTOMATION\\PROTRACTOR\\LinkedIn\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:2201:17\n    at ManagedPromise.invokeCallback_ (C:\\LEARN\\AUTOMATION\\PROTRACTOR\\LinkedIn\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:1376:14)\n    at TaskQueue.execute_ (C:\\LEARN\\AUTOMATION\\PROTRACTOR\\LinkedIn\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:3084:14)\n    at TaskQueue.executeNext_ (C:\\LEARN\\AUTOMATION\\PROTRACTOR\\LinkedIn\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:3067:27)\n    at asyncRun (C:\\LEARN\\AUTOMATION\\PROTRACTOR\\LinkedIn\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:2927:27)\n    at C:\\LEARN\\AUTOMATION\\PROTRACTOR\\LinkedIn\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:668:7\n    at process._tickCallback (internal/process/next_tick.js:68:7)\nFrom: Task: <anonymous wait>\n    at scheduleWait (C:\\LEARN\\AUTOMATION\\PROTRACTOR\\LinkedIn\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:2188:20)\n    at ControlFlow.wait (C:\\LEARN\\AUTOMATION\\PROTRACTOR\\LinkedIn\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:2517:12)\n    at Driver.wait (C:\\LEARN\\AUTOMATION\\PROTRACTOR\\LinkedIn\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\webdriver.js:934:29)\n    at run (C:\\LEARN\\AUTOMATION\\PROTRACTOR\\LinkedIn\\node_modules\\protractor\\built\\browser.js:59:33)\n    at ProtractorBrowser.to.(anonymous function) [as wait] (C:\\LEARN\\AUTOMATION\\PROTRACTOR\\LinkedIn\\node_modules\\protractor\\built\\browser.js:67:16)\n    at Object.check_click (C:\\LEARN\\AUTOMATION\\PROTRACTOR\\LinkedIn\\common_library\\protractor_common.js:11:17)\n    at C:\\LEARN\\AUTOMATION\\PROTRACTOR\\LinkedIn\\page_objects\\job-page.js:77:41\n    at elementArrayFinder_.then (C:\\LEARN\\AUTOMATION\\PROTRACTOR\\LinkedIn\\node_modules\\protractor\\built\\element.js:804:32)\n    at ManagedPromise.invokeCallback_ (C:\\LEARN\\AUTOMATION\\PROTRACTOR\\LinkedIn\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:1376:14)\n    at TaskQueue.execute_ (C:\\LEARN\\AUTOMATION\\PROTRACTOR\\LinkedIn\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:3084:14)\n    at TaskQueue.executeNext_ (C:\\LEARN\\AUTOMATION\\PROTRACTOR\\LinkedIn\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:3067:27)\n    at asyncRun (C:\\LEARN\\AUTOMATION\\PROTRACTOR\\LinkedIn\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:2927:27)\n    at C:\\LEARN\\AUTOMATION\\PROTRACTOR\\LinkedIn\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:668:7\n    at process._tickCallback (internal/process/next_tick.js:68:7)"
             }
           },
           {
