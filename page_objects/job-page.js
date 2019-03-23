@@ -63,9 +63,11 @@ function applyForJobEachPage(pageCounter) {
     currentPage.getText().then(function (currentPage) {
         console.log("Current Page is : Page No :-"+currentPage);
         console.log("Page Counter is :-"+pageCounter);
+        var nextPage = currentPage+1;
+        console.log("Value of NextPage:"+nextPage);
         if(pageCounter!==1 && pageCounter!==9  )
         {
-            var xpath_page = "//button[@aria-label='Page "+pageCounter+"']";
+            var xpath_page = "//button[@aria-label='Page "+nextPage+"']";
             var this_page = element(by.xpath(xpath_page));
             if(!this_page.isPresent())
             {
