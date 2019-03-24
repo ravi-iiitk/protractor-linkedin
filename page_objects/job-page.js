@@ -65,22 +65,24 @@ function applyForJobEachPage(pageCounter) {
         console.log("Page Counter is :-"+pageCounter);
         var nextPage = Number(currentPage)+1;
         console.log("Value of NextPage:"+nextPage);
-        if(pageCounter!==1 && pageCounter!==9  )
+        if(currentPage!==1 && nextPage!==9  )
         {
-            var xpath_page = "//button[@aria-label='Page "+pageCounter+"']";
+            var xpath_page = "//button[@aria-label='Page "+nextPage+"']";
             var this_page = element(by.xpath(xpath_page));
-            if(this_page.isPresent())
-            {
-                if(this_page.isDisplayed())
-                    commonlib.protractor_common.check_click(this_page,15);
-
-            }
+            this_page.isPresent().then(function (isPresent) {
+                if(isPresent)
+                {
+                    this_page.isDisplayed().then(function (isDisPalyed) {
+                        commonlib.protractor_common.check_click(this_page,15);
+                    })
+                }
+            });
             browser.sleep(5000);
             var firstJob = element.all(by.xpath("//li[contains(@id,'ember')]//h3[contains(@id,'ember')]/a")).get(0);
             commonlib.protractor_common.check_click(firstJob,15);
             browser.sleep(3000);
         }
-        else if(pageCounter===9 )
+        else if(nextPage===9 )
         {
             var dotdot = element(by.xpath("//span[contains(text(),'…')]"));
             commonlib.protractor_common.check_click(dotdot,15);
@@ -100,7 +102,7 @@ function applyForJobEachPage(pageCounter) {
             }
         });
         pageCounter = pageCounter+1;
-        if(pageCounter<=40)
+        if(nextPage<=40)
             applyForJobEachPage(pageCounter);
     });
 
@@ -112,7 +114,14 @@ function applyForJobEachPage(pageCounter) {
 function checkJobIsThere(pageCounter,job_counter) {
     var all_job_heading = element.all(by.xpath("//li[contains(@id,'ember')]//h3[contains(@id,'ember')]/a"));
     var this_heading = all_job_heading.get(job_counter);
-    commonlib.protractor_common.check_click(this_heading,15);
+    this_heading.isPresent().then(function (isPresent) {
+        if(isPresent)
+        {
+            this_heading.isDisplayed().then(function (isDisPalyed) {
+                commonlib.protractor_common.check_click(this_heading,15);
+            })
+        }
+    });
     browser.sleep(1000);
     this_heading.getText().then(function (job_title) {
         console.log("The Job title is :"+job_title);
@@ -199,12 +208,27 @@ function scrollTillBottomLeft(count) {
     element.all(by.xpath("//div[@data-control-name='A_jobssearch_job_result_click']")).count().then(function (noOfJobs) {
        var lastJobLink= element.all(by.xpath("//div[@data-control-name='A_jobssearch_job_result_click']")).get(noOfJobs-1);
        var firstJobLink = element.all(by.xpath("//div[@data-control-name='A_jobssearch_job_result_click']")).get(0);
-       commonlib.protractor_common.check_click(lastJobLink,15);
+        lastJobLink.isPresent().then(function (isPresent) {
+            if(isPresent)
+            {
+                lastJobLink.isDisplayed().then(function (isDisPalyed) {
+                    commonlib.protractor_common.check_click(lastJobLink,15);
+                })
+            }
+        });
        console.log("The No of Jobs nos is : "+noOfJobs);
        browser.actions().mouseMove(lastJobLink).click().perform();
        if(count>=9)
        {
-           commonlib.protractor_common.check_click(firstJobLink,15);
+           firstJobLink.isPresent().then(function (isPresent) {
+               if(isPresent)
+               {
+                   firstJobLink.isDisplayed().then(function (isDisPalyed) {
+                       commonlib.protractor_common.check_click(firstJobLink,15);
+                   })
+               }
+           });
+
            browser.sleep(2000);
            return noOfJobs;
        }
