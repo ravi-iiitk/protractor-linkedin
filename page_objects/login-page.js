@@ -4,8 +4,8 @@ var element = protractor.browser.element;
 var assert = require('assert');
 var commonlib =  require("../common_library/protractor_common.js");
 const desiredURL = "https://www.linkedin.com/";
-var user_id = 'rsk.ravi@gmail.com';
-var pwd = 'B@buL1nkedinPwd';
+var user_id = '<user id>';
+var pwd = 'password';
 
 exports.loginpage ={
   email_text_field : element(by.id("login-email")),
