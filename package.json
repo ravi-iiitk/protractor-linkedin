@@ -39,6 +39,6 @@
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "xlsx": "^0.14.1",
-    "exceljs": "^1.7.0"
+    "exceljs": "^1.15.0"
   }
 }
